@@ -1,0 +1,11 @@
+<div class="profile-container">
+  <div *ngIf="selectedProfile">
+    <mat-card class="profile-card">
+     <b> <p>SELECTED PROFILE</p></b> 
+      <img class="profile-image" [src]="selectedProfile.imageURL" alt="Profile Image">
+      <b><h2>{{ selectedProfile.name }},{{ selectedProfile.age }}</h2></b>
+
+      <p class="profile-info">{{ selectedProfile.description }}</p>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="profile-container">
+  <mat-card class="profile-card">
+    <b><p>PENDING PROFILES</p></b>
+    <div class="profile-image-container">
+      <button mat-icon-button class="arrow-button left-arrow-button" (click)="previousProfile()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <img [src]="profiles[currentIndex].imageURL" alt="Profile Image" class="profile-image"
+           (click)="onImageClick($event)">
+      <button mat-icon-button class="arrow-button right-arrow-button" (click)="nextProfile()">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </div>
+    <div class="profile-info">
+      <b><p>{{ profiles[currentIndex].name }}, {{ profiles[currentIndex].age }}</p></b>
+      <b><p>{{ profiles[currentIndex].description }}</p></b>
+    </div>
+    <div class="button-container">
+      <button mat-button class="oval-button yes-button" (click)="onYesClick()">Yes</button>
+      <button mat-button class="oval-button no-button" (click)="onNoClick()">No</button>
+    </div>
+  </mat-card>
+</div>

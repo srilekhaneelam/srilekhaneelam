@@ -1,0 +1,26 @@
+<div class="profile-container">
+  <mat-card class="profile-card">
+    <b><p>LATEST RECOMMENDATIONS PROFILES</p></b>
+    <div class="swipe-container" (mousedown)="onSwipeStart($event)"
+      (touchstart)="onSwipeStart($event)" (mousemove)="onSwipeMove($event)"
+      (touchmove)="onSwipeMove($event)" (mouseup)="onSwipeEnd($event)" (touchend)="onSwipeEnd($event)">
+      <img [src]="profiles[currentIndex].imageURL" alt="Profile Image" class="profile-image" [style.transform]="swipeTransform">
+    </div>
+    <div class="profile-info">
+      <h4 class="profile-heading">{{ profiles[currentIndex].name }}, {{ profiles[currentIndex].age }}</h4>
+      <p>{{ profiles[currentIndex].description }}</p>
+    </div>
+
+    <div class="button-container">
+      <button mat-button class="oval-button shortlist-button" (click)="onShortlist()">
+        <mat-icon class="star-icon" [style.color]="isShortlisted ? 'black' : 'white'">star</mat-icon> Shortlist
+      </button>
+      <button mat-icon-button class="oval-button cross-button" (click)="onNoClick()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <button mat-icon-button class="oval-button tick-button" (click)="onYesClick()">
+        <mat-icon>check</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+</div>
